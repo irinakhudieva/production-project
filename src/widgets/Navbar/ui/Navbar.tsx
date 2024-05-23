@@ -1,6 +1,7 @@
 import classes from './Navbar.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 
 
@@ -27,6 +28,7 @@ export const Navbar = ({className}: NavbarProps) => {
             О сайте
         </AppLink>
         <ThemeSwitcher />
+        <LangSwitcher />
     </div>
   )
 }
