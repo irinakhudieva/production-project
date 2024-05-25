@@ -18,3 +18,8 @@ declare module '*.svg' {
 }
 
 declare const __IS_DEV__: boolean;
+
+declare module '*.scss' {
+  const content: Record<string, string>;
+  export default content;
+}
