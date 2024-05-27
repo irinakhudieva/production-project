@@ -20,7 +20,7 @@ export const Navbar = ({className}: NavbarProps) => {
     <div data-testid="navbar"  className={classNames(classes.navbar, {}, [className])}>
         <AppLink 
             theme={AppLinkTheme.SECONDARY} 
-            to='/'
+            to="/"
         > 
             {t('На главную')}
         </AppLink>

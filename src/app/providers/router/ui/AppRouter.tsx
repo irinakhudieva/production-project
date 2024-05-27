@@ -7,7 +7,8 @@ import { PageLoader } from 'widgets/PageLoader';
 const AppRouter = () => {
   return (
     <Suspense fallback={<PageLoader />}>
-      <Routes>
+      <div className='page-wrapper'>
+        <Routes>
           {Object.values(routeConfig).map(({path, element}) => (
                 <Route 
                   key={path} 
@@ -15,7 +16,11 @@ const AppRouter = () => {
                   element={element} 
                 />
             ))} 
-      </Routes>
+        </Routes>
+      </div>
+
+
+      
            
     </Suspense>
   )
