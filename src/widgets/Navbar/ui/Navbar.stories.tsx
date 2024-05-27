@@ -1,28 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Navbar } from './Navbar';
 
-import Navbar from './Navbar';
-
-const meta: Meta<typeof Navbar> = {
-    title: 'widgets/Navbar',
+export default {
+    title: 'widget/Navbar',
     component: Navbar,
-    // parameters: {
-    //     layout: 'centered',
-    // },
-    tags: ['autodocs'],
-    args: { onClick: fn() },
-};
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Navbar>;
 
-export default meta;
-type Story = StoryObj<typeof Navbar>;
+const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Light: Story = {};
+export const Light = Template.bind({});
+Light.args = {};
 
-export const Dark: Story = {};
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

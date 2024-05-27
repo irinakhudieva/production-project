@@ -1,25 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-
-import 'app/styles/index.scss';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import NotFound from './NotFound';
+import { NotFound } from './NotFound';
 
-const meta: Meta<typeof NotFound> = {
+export default {
     title: 'pages/NotFound',
     component: NotFound,
-    args: {},
-};
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof NotFound>;
 
-export default meta;
-type Story = StoryObj<typeof NotFound>;
+const Template: ComponentStory<typeof NotFound> = (args) => <NotFound {...args} />;
 
-export const Normal: Story = {
-    args: {},
-};
+export const Normal = Template.bind({});
+Normal.args = {};
 
-export const Dark: Story = {
-    args: {},
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
