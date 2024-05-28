@@ -23,14 +23,13 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         }),
     ];
 
-    if(isDev) {
+    if (isDev) {
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
-        })); 
+        }));
     }
-   
-    
+
     return [
         new HtmlWebpackPlugin({
             template: paths.html,

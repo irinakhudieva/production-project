@@ -1,6 +1,9 @@
 .Button {
     cursor: pointer;
     color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .clear {
@@ -15,4 +18,28 @@
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
+}
+
+.background {
+    background: var(--bg-color);
+    color: (--primary-collor);
+    border: none;
+}
+
+.backgroundInverted {
+    background: var(--inverted-bg-color);
+    color: (--inverted-primary-collor);
+    border: none;
+}
+
+.size_s {
+    padding: 5px 10px;
+}
+
+.size_m {
+    padding: 10px 12px;
+}
+
+.size_l {
+    padding: 20px 15px;
 }

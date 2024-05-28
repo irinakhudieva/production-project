@@ -21,5 +21,5 @@ export function buildCssLoader(isDev: boolean) {
             // Compiles Sass to CSS
             'sass-loader',
         ],
-    }
+    };
 }
